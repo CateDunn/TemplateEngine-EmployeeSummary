@@ -22,16 +22,6 @@ class Main {
         this.teamArray = [];
     }
 
-    // async team() {
-    //     let teamHTMLString = '';
-    //     for (const teamMember of this.teamArray) {
-    //         teamHTMLString += teamMember.team()
-    //     }
-    //     const result = Main.templateStart + teamHTMLString + Main.templateEnd
-
-    //     await writeFileAsync(path.resolve(__dirname, '..', 'output', 'generated.html'), result);
-    // }
-    
     async run() {
         const { teamSize } = await inquirer.prompt([{
             type: 'input',
@@ -40,9 +30,16 @@ class Main {
             default: 2,
         }]);
 
+        const team = await inquirer.prompt({
+            type: 'input',
+            name: 'team',
+            message: 'What is your team name?',
+        });
+
         for (let i = 0; i < teamSize; i++) {
             console.log("======================")
             const response = await inquirer.prompt([
+            
                 {
                     type: 'input',
                     name: 'name',
