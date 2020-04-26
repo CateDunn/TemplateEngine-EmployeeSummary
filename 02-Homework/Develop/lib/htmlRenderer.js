@@ -18,10 +18,23 @@ const render = employees => {
     .filter(employee => employee.getRole() === "Intern")
     .map(intern => renderIntern(intern))
   );
+  
+  console.log(html)
+    fs.writeFile("team.html", html, function(err) {
 
+      if (err) {
+        return console.log(err);
+      }
+    
+      console.log("Success!");
+    
+    });
+    
   return renderMain(html.join(""));
 
 };
+
+
 
 const renderManager = manager => {
   let template = fs.readFileSync(path.resolve(templatesDir, "manager.html"), "utf8");

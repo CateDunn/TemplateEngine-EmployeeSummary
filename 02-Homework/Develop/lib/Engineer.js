@@ -13,11 +13,33 @@ class Engineer extends Employee {
         return(this.gitHub)
     
     };
+
+    team() {
+        return `
+        <div class="col-lg-4">
+            <div class="teamRoster card text-center">
+                <div class="card-header">
+                    ${this.name} <br>
+                    Engineer
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">ID: ${this.id}</li>
+                        <li class="list-group-item">Email: ${this.email} </li>
+                        <li class="list-group-item">GitHub: ${this.github} </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        `
+    }
     
     //returns Engineering role
     getRole(){
         return('Engineer')
-    }
+    };
+
+    
 }
 
 module.exports = Engineer;
