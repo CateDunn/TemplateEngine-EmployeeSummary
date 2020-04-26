@@ -7,20 +7,17 @@ class Manager extends Employee {
     constructor(name, id, email, officeNumber){
         super(name, id, email);
         this.officeNumber = officeNumber    
-    }
-    
+    };
+
+    //returns office number
     get officeNumber(){
-        inquirer 
-        .prompt({
-            type: "input",
-            message:"What is their office number?",
-            name: "officeNumber"
-        })
-        
-    }
+        return(this.officeNumber)
+    };
+
+    //returns Manager role
     getRole(){
-        console.log('manager')
         return('Manager')
-    }
+    };
 }
 
+module.exports = Manager;

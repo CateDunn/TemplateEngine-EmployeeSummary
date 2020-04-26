@@ -1,57 +1,41 @@
 // TODO: Write code to define and export the Employee class
 
-var inquirer = require("inquirer");
+
 
 class Employee{
     constructor(name, id, email){
         this.name = name;
         this.id = id;
         this.email = email;  
-    }
-
+    };
+     
+    //returns name
     getName(){
-        inquirer 
-        .prompt({
-            type: "input",
-            message:"What is the name?",
-            name: "name"
-        })
-        
+        return(this.name)
+    };
 
-    }
-
+    //returns id
     getId(){
-        inquirer 
-        .prompt({
-            type: "input",
-            message:"What is the ID",
-            name: "id"
-        })
-        
+       return(this.id)
+    };
 
-    }
-
+    //returns email
     getEmail(){
-        inquirer 
-        .prompt({
-            type: "input",
-            message:"What is the email?",
-            name: "email"
-        })
-        
+        return(this.email)
+    };
 
-    }
-
+    //returns default role
     getRole(){
-        console.log("Employee")
-        return("Employee")
-        
-    }
+        return("Employee")   
+    };
 }
 
 
 
 
 module.exports = Employee;
+
+
+
 
 
