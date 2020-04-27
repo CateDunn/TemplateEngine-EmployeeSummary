@@ -105,12 +105,19 @@ class Main {
                 this.teamArray.push(new Intern(name, id, email, school))
             }
         }
-        // await this.team();
-        console.log(this.teamArray)
-        render(this.teamArray)
-          
-
         
+        const html = render(this.teamArray);
+        fs.writeFile("team.html", html, function(err) {
+
+            if (err) {
+              return console.log(err);
+            }
+          
+            console.log("Success!");
+          
+          });
+            
+ 
           
     }
 

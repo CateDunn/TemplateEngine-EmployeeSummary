@@ -19,17 +19,6 @@ const render = employees => {
     .map(intern => renderIntern(intern))
   );
   
-  
-    fs.writeFile("team.html", html, function(err) {
-
-      if (err) {
-        return console.log(err);
-      }
-    
-      console.log("Success!");
-    
-    });
-    
   return renderMain(html.join(""));
 
 };
