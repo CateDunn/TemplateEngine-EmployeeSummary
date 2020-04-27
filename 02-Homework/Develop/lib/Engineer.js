@@ -3,36 +3,16 @@
 var Employee = require('./Employee')
 
 class Engineer extends Employee {
-    constructor(name, id, email, gitHub,){
+    constructor(name, id, email, github,){
         super(name, id, email);
-        this.gitHub = gitHub   
+        this.github = github;   
     };
 
     //returns github username
     getGithub(){
-        return(this.gitHub)
+        return(this.github)
     
     };
-
-    team() {
-        return `
-        <div class="col-lg-4">
-            <div class="teamRoster card text-center">
-                <div class="card-header">
-                    ${this.name} <br>
-                    Engineer
-                </div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">ID: ${this.id}</li>
-                        <li class="list-group-item">Email: ${this.email} </li>
-                        <li class="list-group-item">GitHub: ${this.github} </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        `
-    }
     
     //returns Engineering role
     getRole(){

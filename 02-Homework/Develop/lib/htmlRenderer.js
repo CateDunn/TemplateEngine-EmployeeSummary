@@ -19,7 +19,7 @@ const render = employees => {
     .map(intern => renderIntern(intern))
   );
   
-  console.log(html)
+  
     fs.writeFile("team.html", html, function(err) {
 
       if (err) {
