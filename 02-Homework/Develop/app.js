@@ -30,11 +30,6 @@ class Main {
             default: 2,
         }]);
 
-        const team = await inquirer.prompt({
-            type: 'input',
-            name: 'team',
-            message: 'What is your team name?',
-        });
 
         for (let i = 0; i < teamSize; i++) {
             console.log("======================")
