@@ -21,7 +21,7 @@ class Main {
     constructor() {
         this.teamArray = [];
     }
-
+    //determine team size for which questions to render
     async run() {
         const { teamSize } = await inquirer.prompt([{
             type: 'input',
@@ -30,7 +30,7 @@ class Main {
             default: 2,
         }]);
 
-
+        //asking questions about team
         for (let i = 0; i < teamSize; i++) {
             console.log("======================")
             const response = await inquirer.prompt([
@@ -90,6 +90,7 @@ class Main {
                 officeNumber,
             } = response;
 
+            //adding each team member to the array
             if (role == 'Engineer') {
                 this.teamArray.push(new Engineer(name, id, email, github))
             }
@@ -100,7 +101,15 @@ class Main {
                 this.teamArray.push(new Intern(name, id, email, school))
             }
         }
-        
+        // After the user has input all employees desired, call the `render` function (required
+        // above) and pass in an array containing all employee objects; the `render` function will
+        // generate and return a block of HTML including templated divs for each employee!
+
+        // After you have your html, you're now ready to create an HTML file using the HTML
+        // returned from the `render` function. Now write it to a file named `team.html` in the
+        // `output` folder. You can use the variable `outputPath` above target this location.
+        // Hint: you may need to check if the `output` folder exists and create it if it
+        // does not.
         const html = render(this.teamArray);
         fs.writeFile("team.html", html, function(err) {
 
@@ -110,37 +119,12 @@ class Main {
           
             console.log("Success!");
           
-          });
-            
- 
-          
+          });     
     }
-
- 
 }
 
 const program = new Main();
 program.run();
-
-// After the user has input all employees desired, call the `render` function (required
-// above) and pass in an array containing all employee objects; the `render` function will
-// generate and return a block of HTML including templated divs for each employee!
-
-
-
-// After you have your html, you're now ready to create an HTML file using the HTML
-// returned from the `render` function. Now write it to a file named `team.html` in the
-// `output` folder. You can use the variable `outputPath` above target this location.
-// Hint: you may need to check if the `output` folder exists and create it if it
-// does not.
-
-
-
-
-
-
-
-
 
 
 // HINT: each employee type (manager, engineer, or intern) has slightly different
