@@ -1,7 +1,7 @@
 # TemplateEngine-EmployeeSummary
 
 ## Description
-    This projects generates a team member page with all memebers of a team and different elements about then depending on their team role. Click on the photo below to see a demo of the app.
+This projects generates a team member page with all memebers of a team and different elements about then depending on their team role. Click on the photo below to see a demo of the app.
 
 [![Picture of Page](team.png)](https://www.youtube.com/watch?v=aTBlQkbUMx4&feature=youtu.be)
 
@@ -12,11 +12,11 @@
 
 
 ## Installation
-     This app requires inquirer. use the 'npm i' command to install.
+    This app requires inquirer. use the 'npm i' command to install.
 
 
 ## License
-    none
+none
 
 
 ## Tests
